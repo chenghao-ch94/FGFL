@@ -102,9 +102,9 @@ For example, to train the 1-shot/5-shot 5-way FGFL with FEAT model with ResNet-1
 
     $ python train_fsl.py --model_class GAIN_Feat --shot 1 --lr 0.0002 --step_size 20 --eval_shot 1 --init_weights2 ./saves/mini_proto_freq/1-shot.pth --use_euclidean --init_weights ./saves/mini_feat/feat-1-shot.pth --tag 1s
 
-    $ python train_fsl.py --model_class GAIN_Feat --shot 5 --eval_shot 5 --init_weights2 ./saves/mini_proto_freq/5-shot.pth --use_euclidean --temperature2 32 --balance 0.01 --init_weights ./saves/mini_feat/feat-5-shot.pth --lr 0.00005 --step_size 10 --max_epoch 200 --lr_mul 1 --tag 5s
+    $ python train_fsl.py --model_class GAIN_Feat --shot 5 --lr 0.00005 --step_size 10 --eval_shot 5 --init_weights2 ./saves/mini_proto_freq/5-shot.pth --use_euclidean --init_weights ./saves/mini_feat/feat-5-shot.pth --max_epoch 200 --lr_mul 1 --temperature2 32 --balance 0.01 --tag 5s
 
-to train the 1-shot/5-shot 5-way FGFL with FEAT model with ResNet-12 backbone on TieredImageNet:
+To train the 1-shot/5-shot 5-way FGFL with FEAT model with ResNet-12 backbone on TieredImageNet:
 
     $ python train_fsl.py --model_class GAIN_Feat --shot 1 --lr 0.0001 --step_size 10 --eval_shot 1 --init_weights2 ./saves/tiered_proto_freq/tiered-pre.pth --use_euclidean --init_weights ./saves/tiered_feat/feat-1-shot.pth --dataset TieredImageNet --balance 0.01 --tag 1s
 
@@ -113,7 +113,7 @@ to train the 1-shot/5-shot 5-way FGFL with FEAT model with ResNet-12 backbone on
 
 ## Acknowledgment
 
-Our code builds upon the following code publicly available, and thank the following repos for providing helpful components/functions in our work.
+Our code builds upon the following code publicly available, and we thank the following repos for providing helpful components/functions in our work.
 
 - [ProtoNet](https://github.com/cyvius96/prototypical-network-pytorch)
 
