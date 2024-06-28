@@ -12,7 +12,7 @@ The code repository for "Frequency Guidance Matters in Few-shot Learning" [[pape
 
 ## Overall Framework
 
-![Alt text](images/frame_new2.pdf)
+![Alt text](images/frame.jpg)
 
 
 ## Prerequisites
