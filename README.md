@@ -71,12 +71,6 @@ The dataset directory should look like this:
             ├── test.csv
             ├── val.csv
         ├── images
-    ├── cubraw
-        ├── split
-            ├── train.csv
-            ├── test.csv
-            ├── val.csv       
-        ├── images
     ├── domainnet
         ├── split
             ├── xxx_train.txt
