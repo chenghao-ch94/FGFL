@@ -176,10 +176,10 @@ class GAINModel(nn.Module):
         self.reverse_layer = ReverseGrad()
         self.lambda_ = 0.5
 
-        # sigma, omega for making the soft-mask #(0.5,100,12.5) for mini 1-shot & 5-shot
-        self.sigma = 0.1 #0.5 #0.1 #0.25   
-        self.omega = 10 #10 #100
-        self.temp =  12.5 #12.5
+        # sigma, omega for making the soft-mask
+        self.sigma = 0.1  
+        self.omega = 100
+        self.temp =  12.5
 
         self.tri_loss_sp = nn.TripletMarginLoss(margin=0.1, p=2) #1-shot mini
 
