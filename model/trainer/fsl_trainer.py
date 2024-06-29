@@ -104,6 +104,8 @@ class FSLTrainer(Trainer):
                 loss_qm = criterion(logits_qm, label)
 
                 total_loss = loss + 1.0*loss2 + 0.1*(loss_am + loss_am2 + loss_sm + loss_qm) + 0.01*loss3 + 0.01*loss_clr
+                # This is a bit better for tiered-ImageNet
+                # total_loss = loss + 1.0*loss2 + 0.1*(loss_am + loss_am2 + loss_sm + loss_qm) + 0.1*loss3 + 0.1*loss_clr
 
                 if logits_reg is not None:
                     total_loss = total_loss + args.balance * F.cross_entropy(logits_reg, label_aux)
