@@ -82,6 +82,8 @@ class FSLTrainer(Trainer):
 
                 loss3 = criterion(logits_g, label_q2)
 
+                ## Original loss for negative pairs
+
                 # loss_am = F.softmax(logits_am, dim=1)
                 # loss_am = loss_am * F.one_hot(label_aux, num_classes=args.way)
                 # loss_am = loss_am.sum()/loss_am.shape[0]
@@ -97,6 +99,8 @@ class FSLTrainer(Trainer):
                 # loss_qm = F.softmax(logits_qm, dim=1)
                 # loss_qm = loss_qm * F.one_hot(label, num_classes=args.way)
                 # loss_qm = loss_qm.sum()/loss_qm.shape[0]
+
+                ## Normal CE loss for negative pairs with gradient reverse layer (GRL)
 
                 loss_am = criterion(logits_am, label_aux)
                 loss_am2 = criterion(logits_am2, label_aux)
