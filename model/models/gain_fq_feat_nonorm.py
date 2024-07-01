@@ -350,7 +350,7 @@ class GAINModel(nn.Module):
 
             loss_contr = self.tri_loss_sp(instance_embs, instance_embs_good, instance_embs_bad)                         #L_sw_tri
 
-            instance_embs_bad = self.reverse_layer(instance_embs_bad, 0.1)
+            instance_embs_bad = self.reverse_layer(instance_embs_bad.detach(), 0.1)
 
             logits_up = self.semi_protofeat_enh(instance_embs_good, instance_embs, support_idx, query_idx)                #L_aug
             # logits_up = self.semi_protofeat_enh_val(instance_embs_good, instance_embs, support_idx, query_idx)
@@ -415,7 +415,7 @@ class GAINModel(nn.Module):
 
             mask_embs = self.freeze_forward(x*(1-mask), freq=True)
 
-            mask_embs = self.reverse_layer(mask_embs, self.lambda_)
+            mask_embs = self.reverse_layer(mask_embs.detach(), self.lambda_)
             
             logits_am, logits_am2 = self.fproto_forward_pare(mask_embs, instance_embsf, support_idx, query_idx, self.temp) #fq: sup_ori -> sup_bad & query_bad
 
