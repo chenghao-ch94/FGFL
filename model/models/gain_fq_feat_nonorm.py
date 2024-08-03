@@ -337,7 +337,7 @@ class GAINModel(nn.Module):
         x2 = dctt.images_to_batch(self.denorms(x).clamp(0,1)) #.detach()
 
         if self.training:
-            # logits, logits_reg = self.feat_forward(instance_embs, support_idx, query_idx)
+            
             logits, logits_reg = self.semi_protofeat(instance_embs, support_idx, query_idx)
 
             logits_fsf, freq_mask, logits_am, logits_am2 = self.gen_freq_mask(x2, s_lab, logits, q_lab)
